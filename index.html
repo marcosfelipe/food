@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
+    <title>Food</title>
+    <meta name="description" content="Food">
+    <meta name="author" content="Food">
+
+    <link rel="stylesheet" href="node_modules/semantic-ui-css/semantic.min.css">
+    <link rel="stylesheet" href="node_modules/swiper/dist/css/swiper.min.css">
+    <link rel="stylesheet" href="assets/css/app.css">
+
+</head>
+
+<body id="app">
+
+<div id="tab1" class="ui inverted teal vertical segment context" v-show="currentTab == 'tab1'">
+    <div class="ui one column stackable center aligned page grid">
+        <div class="column five wide">
+            <div class="ui large inverted form">
+                <div class="field">
+                    <h1 class="ui dividing header inverted">Número da Cadeira</h1>
+                    <input placeholder="Ex: A15" type="text">
+                </div>
+                <button class="ui submit button massive fluid black" v-on="click: setTab('tab2')">Ok</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="tab2" class="ui inverted green vertical segment context" v-show="currentTab == 'tab2'">
+    <div class="ui one column stackable center aligned page grid">
+        <div class="column wide" id="restaurants">
+            <h1 class="ui dividing header inverted">Escolha o Restaurante</h1>
+
+            <div class="swiper-container" id="restaurants_swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="assets/images/restaurante.png"></div>
+                    <div class="swiper-slide"><img src="assets/images/restaurante.png"></div>
+                    <div class="swiper-slide"><img src="assets/images/restaurante.png"></div>
+                    <div class="swiper-slide"><img src="assets/images/restaurante.png"></div>
+                    <div class="swiper-slide"><img src="assets/images/restaurante.png"></div>
+                    <div class="swiper-slide"><img src="assets/images/restaurante.png"></div>
+                    <div class="swiper-slide"><img src="assets/images/restaurante.png"></div>
+                    <div class="swiper-slide"><img src="assets/images/restaurante.png"></div>
+                    <div class="swiper-slide"><img src="assets/images/restaurante.png"></div>
+                    <div class="swiper-slide"><img src="assets/images/restaurante.png"></div>
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination" id="restaurants_swiper_pagination"></div>
+            </div>
+            <br>
+            <button class="ui submit button massive fluid black" v-on="click: setTab('tab3')">Ok</button>
+        </div>
+    </div>
+</div>
+
+<div id="tab3" class="ui inverted blue vertical segment context" v-show="currentTab == 'tab3'">
+    <div class="ui two column stackable center aligned page grid">
+        <h1 class="ui dividing header inverted">Peça já...</h1>
+
+        <div class="column two" id="ordered">
+            <h2>Pedidos</h2>
+        </div>
+
+        <div class="column wide twelve" id="foods">
+
+
+            <div class="swiper-container" id="foods_swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide" v-repeat="4">
+                        <img class="ui medium circular image" src="assets/images/fries.jpg">
+                    </div>
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination" id="foods_swiper_pagination"></div>
+            </div>
+            <br>
+
+        </div>
+
+    </div>
+</div>
+
+
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
+<script src="node_modules/vue/dist/vue.min.js"></script>
+<script src="node_modules/swiper/dist/js/swiper.jquery.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
