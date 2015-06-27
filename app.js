@@ -1,4 +1,4 @@
-var food = angular.module('food', ['ngRoute'])
+var food = angular.module('food', ['ngRoute','ngAnimate'])
     .config(['$routeProvider',
         function ($routeProvider) {
             $routeProvider.

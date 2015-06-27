@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "dependencies": {
     "angular": "^1.4.1",
+    "angular-animate": "^1.4.1",
     "angular-route": "^1.4.1",
     "install": "^0.1.8",
     "npm": "^2.12.0",
