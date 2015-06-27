@@ -8,3 +8,8 @@ food.controller('RestaurantSelectCtrl', ['$scope', '$http',
 
 
     }]);
+food.controller('FoodSelectCtrl', ['$scope', '$http',
+    function ($scope, $http) {
+
+
+    }]);
