@@ -24,6 +24,6 @@ food.directive('pageTitle', function () {
         restrict: 'E',
         transclude: true,
         replace: true,
-        template: '<h1 class="ui dividing header inverted center aligned" ng-transclude></h1>'
+        template: '<h2 class="ui dividing header inverted center aligned page-header" ng-transclude></h2>'
     };
 });

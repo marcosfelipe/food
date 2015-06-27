@@ -58,3 +58,18 @@ body{
     background-position: center center;
     background-size: 100% auto;
 }
+
+.page-header a{
+    /*float: left;*/
+    background: #fff;
+    border-radius: 10px;
+    padding-left: 5px;
+    margin-left: 5px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.page-header{
+    position: relative;
+}
