@@ -4,7 +4,12 @@
     <div class="ui one column stackable center aligned page grid">
         <div class="column wide" id="restaurants">
             <div class="ui divided list">
-                <a href="#/food-select" class="item" ng-repeat="i in [1,2,3,4]" style="background-image: url('assets/images/avelinus.jpg')">
+                <a href="#/food-select"
+                   style="background-image: url('{{ publicApiUrl + restaurant.avatar_url }}')"
+                   title="{{ restaurant.name }}"
+                   class="item"
+                   ng-repeat="restaurant in restaurants"
+                        >
                 </a>
             </div>
         </div>

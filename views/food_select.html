@@ -1,16 +1,28 @@
-<page-title><a href="#/restaurant-select"><i class="icon left arrow teal"></i></a>Peça já...</page-title>
+<page-title><a href="#/food-select"><i class="icon left arrow teal"></i></a>Peça já...</page-title>
 <div id="tab3">
     <div class="ui one column stackable center aligned page grid">
 
         <div class="column wide twelve" id="foods">
-            <div class="swiper-container" id="foods_swiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide" v-repeat="4">
-                        <img class="ui medium circular image" src="assets/images/fries.jpg">
+
+            <div class="ui divided list">
+
+                <div class="item" ng-repeat="food in foods">
+                    <div class="ui card">
+                        <a class="image" href="#">
+                            <img src="{{ food.avatar_url }}">
+                        </a>
+
+                        <div class="content">
+                            <a class="header" href="#">{{ food.name }}</a>
+
+                            <div class="meta">
+                                <a>{{ food.name }}</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
             </div>
-            <br>
 
         </div>
 

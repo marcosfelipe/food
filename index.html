@@ -15,12 +15,17 @@
 
 <body ng-app="food" class="ui inverted teal vertical segment">
 
-<div ng-view class="view-animate"></div>
+<div ng-controller="AppCtrl">
+    <div ng-view class="view-animate"></div>
+</div>
 
 <script src="node_modules/angular/angular.js"></script>
 <script src="node_modules/angular-route/angular-route.js"></script>
 <script src="node_modules/angular-animate/angular-animate.js"></script>
 <script src="app.js"></script>
+<script src="config/general.js"></script>
+<script src="services/food_service.js"></script>
+<script src="services/restaurant_service.js"></script>
 <script src="controllers/controllers.js"></script>
 </body>
 </html>
