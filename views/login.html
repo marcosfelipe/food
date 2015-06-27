@@ -1,0 +1,13 @@
+<div id="tab1" class="ui inverted teal vertical segment context" v-show="currentTab == 'tab1'">
+    <div class="ui one column stackable center aligned page grid">
+        <div class="column five wide">
+            <div class="ui large inverted form">
+                <div class="field">
+                    <h1 class="ui dividing header inverted">Número da Cadeira</h1>
+                    <input placeholder="Ex: A15" type="text">
+                </div>
+                <button class="ui submit button massive fluid black" v-on="click: setTab('tab2')">Ok</button>
+            </div>
+        </div>
+    </div>
+</div>
