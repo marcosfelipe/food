@@ -57,6 +57,12 @@ food.controller('FoodSelectCtrl', function ($rootScope, $scope, FoodService, con
 
 });
 
-food.controller('ReviewCtrl', function(){
-
+food.controller('ReviewCtrl', function($scope, $rootScope){
+    $scope.getTotal = function(){
+        total = 0;
+        angular.forEach($rootScope.foods, function(food){
+            if(food.chose) total = total + (food.price * food.amount);
+        });
+        return total;
+    };
 });

@@ -3,8 +3,8 @@
     <div class="ui one column stackable page grid">
 
         <div class="column wide twelve" id="review">
-            <table class="ui table">
-                <tr ng-repeat="food in foods | filter: chose" ng-init="total=0">
+            <table class="ui celled table">
+                <tr ng-repeat="food in foods | filter: {chose: true}">
                     <td>
                         <img class="ui left avatar floated image"
                              preload-image
@@ -17,16 +17,13 @@
                         </div>
                     </td>
                     <td class="two wide right aligned">
-                        {{ food.amount }}
-                    </td>
-                    <td class="two wide right aligned" ng-init="total+ ( food.price * food.amount)">
-                        R$ {{ food.price }}
+                        <h4>{{ food.amount }} x R$ {{ food.price }}</h4>
                     </td>
                 </tr>
                 <tfoot>
                     <tr>
                         <td colspan="3" class="right aligned">
-                            Total: R$ {{ total }}
+                            <h3>Total: R$ {{ getTotal() }}</h3>
                         </td>
                     </tr>
                 </tfoot>
