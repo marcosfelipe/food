@@ -94,3 +94,8 @@ body {
 .ui.menu.bottom.fixed .grid{
     margin: 1px;
 }
+
+#review .table tr td{
+    border-style: dashed;
+    border-width: 2px;
+}

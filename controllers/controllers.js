@@ -26,7 +26,7 @@ food.controller('FoodSelectCtrl', function ($rootScope, $scope, FoodService, con
             food.amount = 0;
             food.image = config.publicApiUrl + food.avatar_url;
         });
-        $scope.foods = data.foods;
+        $rootScope.foods = data.foods;
     }).error(function () {
         location = '#/restaurant-select';
     });
@@ -54,5 +54,9 @@ food.controller('FoodSelectCtrl', function ($rootScope, $scope, FoodService, con
             }
         });
     };
+
+});
+
+food.controller('ReviewCtrl', function(){
 
 });

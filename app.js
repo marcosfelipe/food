@@ -14,6 +14,10 @@ var food = angular.module('food', ['ngRoute','ngAnimate','angular-preload-image'
                     templateUrl: 'views/food_select.html',
                     controller: 'FoodSelectCtrl'
                 }).
+                when('/review', {
+                    templateUrl: 'views/review.html',
+                    controller: 'ReviewCtrl'
+                }).
                 otherwise({
                     redirectTo: '/login'
                 });
