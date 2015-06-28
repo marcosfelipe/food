@@ -1,22 +1,22 @@
-<page-title><a href="#/food-select"><i class="icon left arrow teal"></i></a>Peça já...</page-title>
+<page-title><a href="#/restaurant-select"><i class="icon left arrow teal"></i></a>Peça já...</page-title>
 <div id="tab3">
     <div class="ui one column stackable center aligned page grid">
 
-        <div class="column wide twelve" id="foods">
+        <div class="column wide twelve center aligned" id="foods">
 
-            <div class="ui divided list">
+            <div class="ui cards">
 
-                <div class="item" ng-repeat="food in foods">
-                    <div class="ui card">
-                        <a class="image" href="#">
-                            <img src="{{ food.avatar_url }}">
-                        </a>
+                <div ng-repeat="food in foods">
+                    <div class="ui card" ng-click="showDetail(food)">
+                        <div class="image">
+                            <img src="{{ publicApiUrl + food.avatar_url }}">
+                        </div>
 
                         <div class="content">
-                            <a class="header" href="#">{{ food.name }}</a>
+                            <div class="header">{{ food.name }}</div>
 
                             <div class="meta">
-                                <a>{{ food.name }}</a>
+                                <a>{{ food.description }}</a>
                             </div>
                         </div>
                     </div>
@@ -26,5 +26,29 @@
 
         </div>
 
+    </div>
+</div>
+
+<div class="ui modal">
+    <i class="close icon"></i>
+
+    <div class="header">
+        Escolha a Quantidade
+    </div>
+    <div class="content">
+        <div class="description">
+            <div class="ui header">{{ food_name }}</div>
+            <p class="black">{{ food_description }}</p>
+            <div class="ui grid">
+                <div class="column center aligned">
+                    <button class="ui button blue large" ng-repeat="i in [1,2,3,4]">{{ i }}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="actions">
+        <div class="ui black button">
+            Não, obrigado!
+        </div>
     </div>
 </div>

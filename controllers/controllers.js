@@ -7,17 +7,27 @@ food.controller('LoginCtrl', ['$scope', '$http',
 
 
     }]);
-food.controller('RestaurantSelectCtrl', function ($scope, RestaurantService) {
-
+food.controller('RestaurantSelectCtrl', function ($rootScope, $scope, RestaurantService) {
     RestaurantService.list().success(function(data, status){
         $scope.restaurants = data.restaurants;
-    })
+    });
 
+    $scope.setRestaurant = function(id){
+        $rootScope.restaurantId = id;
+    };
 });
-food.controller('FoodSelectCtrl', function ($scope, FoodService) {
+food.controller('FoodSelectCtrl', function ($rootScope, $scope, FoodService) {
 
-    FoodService.list().success(function (data, status) {
+    FoodService.list($rootScope.restaurantId).success(function (data, status) {
         $scope.foods = data.foods;
-    })
+    }).error(function(){
+        location = '#/restaurant-select';
+    });
+
+    $scope.showDetail = function(data){
+        $scope.food_name = data.name;
+        $scope.food_description = data.description;
+        $('.ui.modal').modal('show');
+    };
 
 });

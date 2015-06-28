@@ -9,6 +9,7 @@
                    title="{{ restaurant.name }}"
                    class="item"
                    ng-repeat="restaurant in restaurants"
+                   ng-click="setRestaurant(restaurant.id)"
                         >
                 </a>
             </div>
