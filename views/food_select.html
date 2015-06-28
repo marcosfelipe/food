@@ -8,7 +8,11 @@
             <div ng-repeat="food in foods" class="ui list">
                 <div class="ui button white food item" ng-click="showDetail(food)">
                     <div class="image">
-                        <img src="{{ publicApiUrl + food.avatar_url }}" class="ui image medium">
+                        <img preload-image
+                             ng-src="{{ food.image }}"
+                             default-image="assets/images/missing.png"
+                             fallback-image="assets/images/missing.png"
+                             class="ui image medium">
                     </div>
                     <div class="content">
                         <h1 class="header">{{ food.name }}</h1>
@@ -23,10 +27,18 @@
                     </div>
                 </div>
             </div>
-
-
         </div>
 
+    </div>
+</div>
+
+<div class="ui menu bottom fixed" ng-show="foods">
+    <div class="ui grid">
+        <div class="column center aligned">
+            <button class="ui teal button large">
+                <i class="check icon"></i>Pedir
+            </button>
+        </div>
     </div>
 </div>
 
@@ -51,6 +63,7 @@
                     </button>
                 </div>
                 <br>
+
                 <div>
                     <button class="ui black button large" ng-click="uncheck(food_id)">
                         Não, obrigado!

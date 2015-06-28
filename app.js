@@ -1,4 +1,4 @@
-var food = angular.module('food', ['ngRoute','ngAnimate'])
+var food = angular.module('food', ['ngRoute','ngAnimate','angular-preload-image'])
     .config(['$routeProvider',
         function ($routeProvider) {
             $routeProvider.
