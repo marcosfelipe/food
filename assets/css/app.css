@@ -4,65 +4,52 @@
     height: 100%;
 }
 
-#foods .cards .card .image img{
-    height: 200px;
-    width: auto;
+#foods .food img {
+    height: 250px;
+    width: 250px;
 }
 
-#foods .cards .card{
-    margin: 10px;
+#foods .food.item {
+    position: relative;
 }
 
-#foods .swiper-container {
-    width: 100%;
-    height: 400px;
-}
-#foods .swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    /* Center slide text vertically */
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    -webkit-justify-content: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    -webkit-align-items: center;
-    align-items: center;
+#foods .food.item .mark {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 999;
 }
 
-#foods .swiper-slide img{
-    height: 300px;
+#foods .food.item .dimmer{
+    z-index: 998;
 }
 
 .view-animate.ng-enter, .view-animate.ng-leave {
-    -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
-    transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
-    display:block;
-    width:100%;
-    position:absolute;
+    -webkit-transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+    transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+    display: block;
+    width: 100%;
+    position: absolute;
 }
 
 .view-animate.ng-enter {
-    left:100%;
-}
-.view-animate.ng-enter.ng-enter-active {
-    left:0;
-}
-.view-animate.ng-leave.ng-leave-active {
-    left:-100%;
+    left: 100%;
 }
 
-body{
+.view-animate.ng-enter.ng-enter-active {
+    left: 0;
+}
+
+.view-animate.ng-leave.ng-leave-active {
+    left: -100%;
+}
+
+body {
     overflow-x: hidden;
 
 }
 
-#restaurants .list .item{
+#restaurants .list .item {
     height: 200px;
     overflow-y: hidden;
     background-repeat: no-repeat;
@@ -70,7 +57,7 @@ body{
     background-size: 100% auto;
 }
 
-.page-header a{
+.page-header a {
     /*float: left;*/
     background: #fff;
     border-radius: 10px;
@@ -81,6 +68,10 @@ body{
     top: 0;
 }
 
-.page-header{
+.page-header {
     position: relative;
+}
+
+.modal p {
+    color: #000;
 }

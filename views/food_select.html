@@ -4,25 +4,26 @@
 
         <div class="column wide twelve center aligned" id="foods">
 
-            <div class="ui cards">
 
-                <div ng-repeat="food in foods">
-                    <div class="ui card" ng-click="showDetail(food)">
-                        <div class="image">
-                            <img src="{{ publicApiUrl + food.avatar_url }}">
+            <div ng-repeat="food in foods" class="ui list">
+                <div class="ui button white food item" ng-click="showDetail(food)">
+                    <div class="image">
+                        <img src="{{ publicApiUrl + food.avatar_url }}" class="ui image medium">
+                    </div>
+                    <div class="content">
+                        <h1 class="header">{{ food.name }}</h1>
+
+                        <div class="mark" ng-show="food.chose">
+                            <h2 class="ui center aligned icon header">
+                                <i class="circular check icon green inverted"></i>
+                            </h2>
                         </div>
+                        <div class="ui active dimmer" ng-show="food.chose"></div>
 
-                        <div class="content">
-                            <div class="header">{{ food.name }}</div>
-
-                            <div class="meta">
-                                <a>{{ food.description }}</a>
-                            </div>
-                        </div>
                     </div>
                 </div>
-
             </div>
+
 
         </div>
 
@@ -39,16 +40,23 @@
         <div class="description">
             <div class="ui header">{{ food_name }}</div>
             <p class="black">{{ food_description }}</p>
-            <div class="ui grid">
-                <div class="column center aligned">
-                    <button class="ui button blue large" ng-repeat="i in [1,2,3,4]">{{ i }}</button>
-                </div>
-            </div>
         </div>
     </div>
     <div class="actions">
-        <div class="ui black button">
-            Não, obrigado!
+        <div class="ui grid">
+            <div class="column center aligned">
+                <div>
+                    <button class="ui button blue large" ng-repeat="i in [1,2,3,4]" ng-click="check(food_id, i)">{{ i
+                        }}
+                    </button>
+                </div>
+                <br>
+                <div>
+                    <button class="ui black button large" ng-click="uncheck(food_id)">
+                        Não, obrigado!
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
 </div>
