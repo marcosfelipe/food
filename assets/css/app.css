@@ -101,8 +101,62 @@ body {
 }
 
 #credit_card{
-    border-radius: 10px;
-    min-width: 443px;
-    max-width: 450px;
-    color: #fff;
+  perspective: 1000;
+  -webkit-perspective: 1000;
+  height: 300px;
+}
+
+#credit_card .front, #credit_card .back{
+    border-radius: 10px !important;
+    min-width: 407px !important;
+    max-width: 450px !important;
+    color: #fff !important;
+    height: 245px;
+}
+
+#credit_card .back .segment.white label{
+  color: black;
+}
+
+#credit_card .back .form .field.cvc-code{
+  float: right;
+}
+
+#credit_card .back .form .field.cvc-code input{
+  width: 60px;
+}
+
+#credit_card .back .magnetic-strip{
+    margin-left: -1em;
+    margin-right: -1em;
+    height: 50px;
+}
+
+#credit_card.turn .flipper {  		
+  transform: rotateY(180deg);  	
+} 
+
+.flipper {  	
+  transition: 0.6s;  	
+  transform-style: preserve-3d;    	
+  position: relative;  
+}
+
+.front, .back {  	
+  backface-visibility: hidden;    	
+  position: absolute !important;  	
+  top: 10px;  	
+  left: 0;  
+}
+
+.front { z-index: 2;  }    
+
+.back { transform: rotateY(180deg); }
+
+.clear-pd-rt{
+  padding-right: 0 !important;
+}
+
+.clear-pd-lt{
+  padding-left: 0 !important;
 }

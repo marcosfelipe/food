@@ -1,25 +1,23 @@
 <div id="tab5">
     <page-title>Faça o Pagamento</page-title>
 
-    <div class="ui one column stackable center aligned page grid">
-        <div class="column seven wide">
-
-            <div class="ui segment inverted form red" id="credit_card">
-
+    <div class="ui one column stackable center aligned page grid" id="credit_card" ng-class="{turn: turn}"  ontouchstart="this.classList.toggle('hover');">
+        
+      <div class="column seven wide flipper" ng-init="turn = false">
+        
+            <div class="ui segment inverted form red front">
                 <div class="ui left aligned segment inverted red">
                     <h4>CARTÃO DE CRÉDITO</h4>
                 </div>
-
-                <div class="ui grid">
-                    <div class="four wide column">
+                <div class="ui grid centered aligned">
+                    <div class="three wide column">
                         <label>NÚMERO</label>
 
                         <div class="field">
                             <input placeholder="0000" type="text">
                         </div>
                     </div>
-
-                    <div class="four wide column">
+                    <div class="three wide column">
                         <label>&nbsp;</label>
 
                         <div class="field">
@@ -27,7 +25,7 @@
                         </div>
                     </div>
 
-                    <div class="four wide column">
+                    <div class="three wide column">
                         <label>&nbsp;</label>
 
                         <div class="field">
@@ -35,7 +33,7 @@
                         </div>
                     </div>
 
-                    <div class="four wide column">
+                    <div class="three wide column">
                         <label>&nbsp;</label>
 
                         <div class="field">
@@ -43,6 +41,7 @@
                         </div>
                     </div>
                 </div>
+                
 
                 <div class="ui grid middle aligned">
                     <div class="four wide column">
@@ -68,15 +67,38 @@
                         </div>
                     </div>
                 </div>
-
             </div>
+          
+            <div class="ui segment inverted form red back">
+              
+                  <br>                  
+                  <div class="ui segment inverted black magnetic-strip"></div>                  
 
-        </div>
+                  <div class="ui segment white">  
+                      <div class="row middle aligned">
+                        <div class="column">
+                          <div class="ui form">                              
+                              <div class="field inline cvc-code">
+                                  <label>CVC COD.</label>
+                                  <input placeholder="123" type="text">
+                              </div>
+                          </div>
+                        </div>
+                      </div>                      
+                  </div>
+              
+              </div>
 
-        <div class="row">
-            <a class="ui submit button massive black" href="#/restaurant-select">Confirmar</a>
-        </div>
+        </div>    
 
     </div>
-</div>
+  
+    <div class="ui one column stackable center aligned page grid">
+      <div class="row">
+        <button class="ui submit button massive black icon" ng-click="turn = !turn"><i class="icon undo"></i></button>
+      </div>
+      <div class="row">
+        <a class="ui submit button massive black" href="#/restaurant-select">Confirmar</a>
+      </div>
+    </div>
 </div>
