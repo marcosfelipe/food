@@ -66,3 +66,6 @@ food.controller('ReviewCtrl', function($scope, $rootScope){
         return total;
     };
 });
+
+food.controller('CreditCardCtrl', function($scope, $rootScope){
+});

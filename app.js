@@ -18,6 +18,10 @@ var food = angular.module('food', ['ngRoute','ngAnimate','angular-preload-image'
                     templateUrl: 'views/review.html',
                     controller: 'ReviewCtrl'
                 }).
+                when('/credit-card', {
+                    templateUrl: 'views/credit_card.html',
+                    controller: 'CreditCardCtrl'
+                }).
                 otherwise({
                     redirectTo: '/login'
                 });
