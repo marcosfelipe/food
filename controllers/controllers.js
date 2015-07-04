@@ -68,4 +68,14 @@ food.controller('ReviewCtrl', function($scope, $rootScope){
 });
 
 food.controller('CreditCardCtrl', function($scope, $rootScope){
+
+    $scope.verifyFields = function(){
+        if($scope.holder_name != undefined && $scope.card_number_1 != undefined
+        && $scope.card_number_2 != undefined && $scope.card_number_2 != undefined
+        && $scope.card_number_4 != undefined && $scope.cvc_code == undefined
+        && $scope.expiration_month != undefined && $scope.expiration_year != undefined){
+            $scope.turn = true;
+        }
+    };
+
 });

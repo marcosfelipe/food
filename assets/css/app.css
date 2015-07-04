@@ -4,12 +4,12 @@
     height: 100%;
 }
 
-#restaurants{
+#restaurants {
     -webkit-transition-delay: 2s; /* Safari */
     transition-delay: 2s;
 }
 
-#tab3{
+#tab3 {
     margin-bottom: 100px;
 }
 
@@ -29,7 +29,7 @@
     z-index: 99;
 }
 
-#foods .food.item .dimmer{
+#foods .food.item .dimmer {
     z-index: 98;
 }
 
@@ -85,78 +85,140 @@ body {
     color: #000;
 }
 
-.ui.menu.bottom.fixed{
-    top:auto;
+.ui.menu.bottom.fixed {
+    top: auto;
     bottom: 0;
     left: 0;
 }
 
-.ui.menu.bottom.fixed .grid{
+.ui.menu.bottom.fixed .grid {
     margin: 1px;
 }
 
-#review .table tr td{
+#review .table tr td {
     border-style: dashed;
     border-width: 2px;
 }
 
-#credit_card{
-  perspective: 1000;
-  -webkit-perspective: 1000;
-  height: 300px;
+#credit_card {
+    perspective: 1000;
+    -webkit-perspective: 1000;
+    height: 300px;
 }
 
-#credit_card .front, #credit_card .back{
+#credit_card .front, #credit_card .back {
     border-radius: 10px !important;
-    min-width: 407px !important;
-    max-width: 450px !important;
     color: #fff !important;
-    height: 245px;
+    height: 230px;
+    width: 320px;
+    font-family: Courier New, monospace;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
-#credit_card .back .segment.white label{
-  color: black;
+#credit_card select, #credit_card input{
+    font-family: Courier New, monospace;
 }
 
-#credit_card .back .form .field.cvc-code{
-  float: right;
+#credit_card_numbers {
+    padding-left: 14px;
+    padding-right: 14px;
 }
 
-#credit_card .back .form .field.cvc-code input{
-  width: 60px;
+#credit_card_numbers .column {
+    padding-right: 2px;
+    padding-left: 2px;
+    padding-bottom: 0;
 }
 
-#credit_card .back .magnetic-strip{
+#credit_card_expiration .column{
+    padding-bottom: 0;
+}
+
+#credit_card_name.grid .column{
+    padding-top: 0;
+}
+
+#card_holder_name{
+    text-align: left !important;
+    text-transform: uppercase;
+}
+
+#credit_card .front {
+    background: #f85032; /* Old browsers */
+    background: -moz-linear-gradient(45deg, #f85032 0%, #f16f5c 50%, #f6290c 51%, #f02f17 71%, #e73827 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, #f85032), color-stop(50%, #f16f5c), color-stop(51%, #f6290c), color-stop(71%, #f02f17), color-stop(100%, #e73827)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(45deg, #f85032 0%, #f16f5c 50%, #f6290c 51%, #f02f17 71%, #e73827 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(45deg, #f85032 0%, #f16f5c 50%, #f6290c 51%, #f02f17 71%, #e73827 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(45deg, #f85032 0%, #f16f5c 50%, #f6290c 51%, #f02f17 71%, #e73827 100%); /* IE10+ */
+    background: linear-gradient(45deg, #f85032 0%, #f16f5c 50%, #f6290c 51%, #f02f17 71%, #e73827 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f85032', endColorstr='#e73827', GradientType=1); /* IE6-9 fallback on horizontal gradient */
+}
+
+#credit_card .back {
+    background: #f7310e; /* Old browsers */
+    background: -moz-linear-gradient(45deg, #f7310e 0%, #ef503b 50%, #f6290c 51%, #f02f17 71%, #e51906 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, #f7310e), color-stop(50%, #ef503b), color-stop(51%, #f6290c), color-stop(71%, #f02f17), color-stop(100%, #e51906)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(45deg, #f7310e 0%, #ef503b 50%, #f6290c 51%, #f02f17 71%, #e51906 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(45deg, #f7310e 0%, #ef503b 50%, #f6290c 51%, #f02f17 71%, #e51906 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(45deg, #f7310e 0%, #ef503b 50%, #f6290c 51%, #f02f17 71%, #e51906 100%); /* IE10+ */
+    background: linear-gradient(45deg, #f7310e 0%, #ef503b 50%, #f6290c 51%, #f02f17 71%, #e51906 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f7310e', endColorstr='#e51906', GradientType=1); /* IE6-9 fallback on horizontal gradient */
+}
+
+#credit_card .front .header {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-family: Courier New, monospace;
+}
+
+#credit_card .front input, #credit_card .front select, #credit_card .back input {
+    padding-right: 2px;
+    padding-left: 2px;
+    text-align: center;
+}
+
+#credit_card .back .segment.white label {
+    color: black;
+}
+
+#credit_card .back .form .field.cvc-code {
+    float: right;
+}
+
+#credit_card .back .form .field.cvc-code input {
+    width: 60px;
+}
+
+#credit_card .back .magnetic-strip {
     margin-left: -1em;
     margin-right: -1em;
     height: 50px;
 }
 
-#credit_card.turn .flipper {  		
-  transform: rotateY(180deg);  	
-} 
-
-.flipper {  	
-  transition: 0.6s;  	
-  transform-style: preserve-3d;    	
-  position: relative;  
+#credit_card.turn .flipper {
+    transform: rotateY(180deg);
 }
 
-.front, .back {  	
-  backface-visibility: hidden;    	
-  position: absolute !important;  	
-  top: 10px;  	
-  left: 0;  
+.flipper {
+    transition: 0.6s;
+    transform-style: preserve-3d;
+    position: relative;
+    width: 320px !important;
 }
 
-.front { z-index: 2;  }    
-
-.back { transform: rotateY(180deg); }
-
-.clear-pd-rt{
-  padding-right: 0 !important;
+.front, .back {
+    backface-visibility: hidden;
+    position: absolute !important;
+    top: 10px;
+    left: 0;
 }
 
-.clear-pd-lt{
-  padding-left: 0 !important;
+.front {
+    z-index: 2;
 }
+
+.back {
+    transform: rotateY(180deg);
+}
+

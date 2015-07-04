@@ -1,104 +1,127 @@
 <div id="tab5">
     <page-title>Faça o Pagamento</page-title>
 
-    <div class="ui one column stackable center aligned page grid" id="credit_card" ng-class="{turn: turn}"  ontouchstart="this.classList.toggle('hover');">
-        
-      <div class="column seven wide flipper" ng-init="turn = false">
-        
+    <div class="ui one column center aligned page grid" id="credit_card" ng-class="{turn: turn}"
+         ontouchstart="this.classList.toggle('hover');">
+
+        <div class="column flipper" ng-init="turn = false">
+
             <div class="ui segment inverted form red front">
-                <div class="ui left aligned segment inverted red">
-                    <h4>CARTÃO DE CRÉDITO</h4>
-                </div>
-                <div class="ui grid centered aligned">
-                    <div class="three wide column">
+
+                <div class="ui left aligned header">CARTÃO DE CRÉDITO</div>
+
+                <div class="ui grid centered aligned" id="credit_card_numbers">
+                    <div class="four wide column">
                         <label>NÚMERO</label>
 
                         <div class="field">
-                            <input placeholder="0000" type="text">
+                            <input ng-model="card_number_1" placeholder="0000" type="number" ng-blur="verifyFields()">
                         </div>
                     </div>
-                    <div class="three wide column">
+                    <div class="four wide column">
                         <label>&nbsp;</label>
 
                         <div class="field">
-                            <input placeholder="0000" type="text">
+                            <input ng-model="card_number_2" placeholder="0000" type="number" ng-blur="verifyFields()">
                         </div>
                     </div>
 
-                    <div class="three wide column">
+                    <div class="four wide column">
                         <label>&nbsp;</label>
 
                         <div class="field">
-                            <input placeholder="0000" type="text">
+                            <input ng-model="card_number_3" placeholder="0000" type="number" ng-blur="verifyFields()">
                         </div>
                     </div>
 
-                    <div class="three wide column">
+                    <div class="four wide column">
                         <label>&nbsp;</label>
 
                         <div class="field">
-                            <input placeholder="0000" type="text">
+                            <input ng-model="card_number_4" placeholder="0000" type="number" ng-blur="verifyFields()">
                         </div>
                     </div>
                 </div>
-                
 
-                <div class="ui grid middle aligned">
-                    <div class="four wide column">
-                        <label>VALIDADE</label>
-                    </div>
-                    <div class="four wide column">
-                        <div class="field">
-                            <label>MÊS</label>
-                            <select>
+                <div class="ui grid four columns middle aligned">
+
+                    <div class="row">
+                        <div class="column four wide">
+                            VALIDADE
+                        </div>
+                        <div class="column four wide">
+                            <select ng-model="expiration_month" ng-blur="verifyFields()">
                                 <option>01</option>
                                 <option>02</option>
                             </select>
                         </div>
-                    </div>
-                    <div class="four wide column">
-                        <div class="field">
-                            <label>ANO</label>
-                            <select>
+                        <div class="column one wide">
+                            <h3>/</h3>
+                        </div>
+                        <div class="column four wide">
+
+                            <select ng-model="expiration_year" ng-blur="verifyFields()">
                                 <option>14</option>
                                 <option>15</option>
                                 <option>16</option>
                             </select>
+
                         </div>
                     </div>
                 </div>
-            </div>
-          
-            <div class="ui segment inverted form red back">
-              
-                  <br>                  
-                  <div class="ui segment inverted black magnetic-strip"></div>                  
 
-                  <div class="ui segment white">  
-                      <div class="row middle aligned">
-                        <div class="column">
-                          <div class="ui form">                              
-                              <div class="field inline cvc-code">
-                                  <label>CVC COD.</label>
-                                  <input placeholder="123" type="text">
-                              </div>
-                          </div>
+                <div class="ui grid middle" id="credit_card_name">
+                    <div class="column">
+                        <div class="ui input small">
+                            <input type="text"
+                                   id="card_holder_name"
+                                   ng-model="holder_name"
+                                   placeholder="NOME COMO ESCRITO NO CARTÃO"
+                                   ng-blur="verifyFields()"
+                                    >
                         </div>
-                      </div>                      
-                  </div>
-              
-              </div>
+                    </div>
+                </div>
 
-        </div>    
+
+            </div>
+
+            <div class="ui segment inverted form red back">
+
+                <br>
+
+                <div class="ui segment inverted black magnetic-strip"></div>
+
+                <div class="ui segment white">
+                    <div class="row middle aligned">
+                        <div class="column">
+                            <div class="ui form">
+                                <div class="field inline cvc-code">
+                                    <label>CVC COD.</label>
+                                    <input placeholder="123" type="number" ng-model="cvc_code">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
 
     </div>
-  
+
     <div class="ui one column stackable center aligned page grid">
-      <div class="row">
-        <button class="ui submit button massive black icon" ng-click="turn = !turn"><i class="icon undo"></i></button>
-      </div>
-      <div class="row">
-        <a class="ui submit button massive black" href="#/restaurant-select">Confirmar</a>
-      </div>
+        <div class="row">
+            <div class="column">
+                <button class="ui submit button massive black icon" ng-click="turn = !turn"><i class="icon undo"></i>
+                </button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="column">
+                <a class="ui submit button massive black" href="#/restaurant-select">Confirmar</a>
+            </div>
+        </div>
     </div>
 </div>
