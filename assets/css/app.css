@@ -116,7 +116,22 @@ body {
     margin-bottom: 0;
 }
 
-#credit_card select, #credit_card input{
+@media screen and (max-width: 290px) {
+    #credit_card .front, #credit_card .back, .flipper {
+        width: 280px !important;
+    }
+    .flipper{
+        margin-left: -30px;
+    }
+}
+
+@media screen and (min-width: 291px){
+    .flipper{
+        width: 320px !important;
+    }
+}
+
+#credit_card select, #credit_card input {
     font-family: Courier New, monospace;
 }
 
@@ -131,15 +146,15 @@ body {
     padding-bottom: 0;
 }
 
-#credit_card_expiration .column{
+#credit_card_expiration .column {
     padding-bottom: 0;
 }
 
-#credit_card_name.grid .column{
+#credit_card_name.grid .column {
     padding-top: 0;
 }
 
-#card_holder_name{
+#card_holder_name {
     text-align: left !important;
     text-transform: uppercase;
 }
@@ -204,7 +219,6 @@ body {
     transition: 0.6s;
     transform-style: preserve-3d;
     position: relative;
-    width: 320px !important;
 }
 
 .front, .back {
