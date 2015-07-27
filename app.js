@@ -1,4 +1,4 @@
-var food = angular.module('food', ['ngRoute','ngAnimate','angular-preload-image'])
+var food = angular.module('food', ['ngRoute','ngAnimate','angular-preload-image', 'ngSanitize', 'ui.router', 'ionic'])
     .config(['$routeProvider',
         function ($routeProvider) {
             $routeProvider.
@@ -27,11 +27,16 @@ var food = angular.module('food', ['ngRoute','ngAnimate','angular-preload-image'
                 });
         }]);
 
-food.directive('pageTitle', function () {
+food.directive('pageTitle', function ($rootScope) {
     return {
         restrict: 'E',
         transclude: true,
         replace: true,
-        template: '<h2 class="ui dividing header inverted center aligned page-header" ng-transclude></h2>'
+        template: '',
+        link: function(scope, elem, attr, ctrl, trans){
+            trans(scope, function(clone){
+                $rootScope.pageTitle = clone[0].textContent;
+            })
+        }
     };
 });

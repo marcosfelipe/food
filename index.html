@@ -2,12 +2,13 @@
 <html lang="pt-br">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
 
     <title>Food</title>
     <meta name="description" content="Food">
     <meta name="author" content="Food">
-
+    <link rel="stylesheet" href="bower_components/ionic/release/css/ionic.css">
     <link rel="stylesheet" href="node_modules/semantic-ui-css/semantic.min.css">
     <link rel="stylesheet" href="assets/css/app.css">
 
@@ -16,7 +17,41 @@
 <body ng-app="food" class="ui inverted teal vertical segment">
 
 <div ng-controller="AppCtrl">
-    <div ng-view class="view-animate"></div>
+
+
+    <ion-side-menus>
+
+
+        <ion-nav-bar>
+            <ion-nav-buttons side="left">
+                <!-- Toggle left side menu -->
+                <button menu-toggle="left" ng-click="toggleLeft()" class="button button-icon icon ion-navicon"></button>
+            </ion-nav-buttons>
+            <ion-nav-title>{{ pageTitle }}</ion-nav-title>
+        </ion-nav-bar>
+
+        <!-- Left menu -->
+        <ion-side-menu side="left">
+            <ion-header-bar class="bar-stable">
+                <h1 class="title">Theme</h1>
+            </ion-header-bar>
+            <ion-content>
+                <ion-list>
+                    <ion-item nav-clear menu-close href="#/map/home" class="item item-icon-left" >
+                        <i class="icon ion-ios7-ionic-outline"></i>Map
+                    </ion-item>
+                    <ion-item nav-clear menu-close href="#/map/help" class="item item-icon-left" >
+                        <i class="icon ion-ios7-help"></i>Help
+                    </ion-item>
+                </ion-list>
+            </ion-content>
+        </ion-side-menu>
+
+        <ion-side-menu-content>
+            <div ng-view class="view-animate content has-header padding"></div>
+        </ion-side-menu-content>
+    </ion-side-menus>
+
 </div>
 
 <script src="node_modules/jquery/dist/jquery.min.js"></script>
@@ -25,6 +60,10 @@
 <script src="node_modules/angular-route/angular-route.js"></script>
 <script src="node_modules/angular-animate/angular-animate.js"></script>
 <script src="node_modules/angular-preload-image/angular-preload-image.min.js"></script>
+<script src="node_modules/angular-sanitize/angular-sanitize.min.js"></script>
+<script src="node_modules/angular-ui-router/build/angular-ui-router.js"></script>
+<script src="bower_components/ionic/release/js/ionic.js"></script>
+<script src="bower_components/ionic/release/js/ionic-angular.js"></script>
 <script src="app.js"></script>
 <script src="config/general.js"></script>
 <script src="services/food_service.js"></script>

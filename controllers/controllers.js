@@ -1,18 +1,23 @@
-food.controller('AppCtrl', function ($rootScope, config, RestaurantService) {
+food.controller('AppCtrl', function ($rootScope, config, RestaurantService, $ionicSideMenuDelegate) {
     RestaurantService.list().success(function (data, status) {
-        angular.forEach(data.restaurants, function(restaurant){
+        angular.forEach(data.restaurants, function (restaurant) {
             restaurant.image = new Image();
             restaurant.image.src = config.publicApiUrl + restaurant.avatar_url;
         });
         $rootScope.restaurants = data.restaurants;
     });
+
+    $rootScope.toggleLeft = function () {
+        $ionicSideMenuDelegate.toggleLeft();
+    };
 });
 
-food.controller('LoginCtrl', ['$scope', '$http',
-    function ($scope, $http) {
+food.controller('LoginCtrl', function ($scope, $http) {
 
 
-    }]);
+
+
+});
 food.controller('RestaurantSelectCtrl', function ($rootScope, $scope) {
     $scope.setRestaurant = function (id) {
         $rootScope.restaurantId = id;
@@ -57,23 +62,23 @@ food.controller('FoodSelectCtrl', function ($rootScope, $scope, FoodService, con
 
 });
 
-food.controller('ReviewCtrl', function($scope, $rootScope){
-    $scope.getTotal = function(){
+food.controller('ReviewCtrl', function ($scope, $rootScope) {
+    $scope.getTotal = function () {
         total = 0;
-        angular.forEach($rootScope.foods, function(food){
-            if(food.chose) total = total + (food.price * food.amount);
+        angular.forEach($rootScope.foods, function (food) {
+            if (food.chose) total = total + (food.price * food.amount);
         });
         return total;
     };
 });
 
-food.controller('CreditCardCtrl', function($scope, $rootScope){
+food.controller('CreditCardCtrl', function ($scope, $rootScope) {
 
-    $scope.verifyFields = function(){
-        if($scope.holder_name != undefined && $scope.card_number_1 != undefined
-        && $scope.card_number_2 != undefined && $scope.card_number_2 != undefined
-        && $scope.card_number_4 != undefined && $scope.cvc_code == undefined
-        && $scope.expiration_month != undefined && $scope.expiration_year != undefined){
+    $scope.verifyFields = function () {
+        if ($scope.holder_name != undefined && $scope.card_number_1 != undefined
+            && $scope.card_number_2 != undefined && $scope.card_number_2 != undefined
+            && $scope.card_number_4 != undefined && $scope.cvc_code == undefined
+            && $scope.expiration_month != undefined && $scope.expiration_year != undefined) {
             $scope.turn = true;
         }
     };

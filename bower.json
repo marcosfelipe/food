@@ -1,0 +1,21 @@
+{
+  "name": "food",
+  "version": "0.0.1",
+  "homepage": "https://github.com/marcosfelipe/food",
+  "authors": [
+    "marcosdebian <marcos.felype@hotmail.com>"
+  ],
+  "description": "food app",
+  "main": "index.html",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "ionic": "~1.0.1"
+  }
+}
