@@ -9,7 +9,6 @@
     "angular-ui-router": "^0.2.15",
     "install": "^0.1.8",
     "jquery": "^2.1.4",
-    "npm": "^2.13.2",
     "semantic-ui-css": "^1.12.3"
   }
 }
